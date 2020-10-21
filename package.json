@@ -2,30 +2,11 @@
   "name": "curso-supertest-bora-qa",
   "version": "1.0.0",
   "private": true,
-  "description": "Exemplo de estrutura de automação de API feita com Supertest e Mocha",
-  "author": "Bora QA",
+  "description": "Curso - Automação de API com SuperTest",
   "scripts": {
-    "test": "cross-env AMBIENTE='local' mocha",
-    "test:hom": "cross-env AMBIENTE='homologacao' mocha",
-    "lint": "standard",
-    "lint:fix": "standard --fix"
+    "test": "mocha"
   },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "cross-env": "^7.0.2",
-    "faker": "^4.1.0",
-    "joi": "^17.2.1",
-    "mocha": "^7.2.0",
-    "mochawesome": "^6.1.1",
-    "standard": "^14.3.4",
-    "supertest": "^4.0.2"
-  },
-  "standard": {
-    "globals": [
-      "beforeEach",
-      "describe",
-      "it",
-      "request"
-    ]
+  "dependencies": {
+    "mocha": "^7.2.0"
   }
 }
