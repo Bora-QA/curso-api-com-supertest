@@ -1,4 +1,4 @@
-# 📖 (Curso) Automação de API com SuperTest
+ 📖 (Curso) Automação de API com SuperTest
 
 #### Um curso do [Bora QA](http://boraqa.org) para a comunidade de testes ❤️
 ___
@@ -46,77 +46,118 @@ ___
 
 ## Grade
 
-<strike>1. Introdução
-    - Objetivo do curso
-1. Config
-    - Supertest > Requests
-        - O que é e para que serve
-        - Instalando
-    - Mocha > Estrutura
-        - O que é e para que serve
-        - Instalando
-    - Chai > Asserção
-        - O que é e para que serve
-        - Instalando
-    - Faker > dados aleatórios
-        - O que é e para que serve
-        - Instalando
-    - Joi > Schema
-        - O que é e para que serve
-        - Instalando
-1. Automatizando os principais verbos
-    - GET
-        - GET sem parâmetro > valid. body da resposta e status code
-        - GET com parâmetros > valid. body da resposta e status code
-    - POST
-        - Passando o corpo no post > fazer cadastro
-    - PUT
-        - Alterando nosso cadastro
-    - PATCH
-        - Alterando nosso cadastro
-    - DELETE
-        - Excluindo o cadastro
-1. Um pouco mais
-    - Setando header
-    - Entendendo describe e it > Mocha
-    - Autenticando e passando token no header
-    - Dicas > arquivo de config com baseUrl</strike>
-
-**grade parcial:**
-
-- npm init - iniciar projeto
-- npm install mocha, chai (assert) e supertest - oq é cada?
-- primeiro teste - get em usuarios e validar retorno
-- GET com query string
-- POST em usuarios
-- install faker - usar dados aleatórios
-- fazer POST usuarios, POST login e enviar auth no header de POST produtos
-- report HTML - instalar mochawesome
-- criar .mocharc e passar configuração do package.json p ele
-- estruturar os testes dentro de test/{usuarios, produtos}
-- criar o global.js para centralizar o supertest
-- atualizar dados - PUT produtos
-- melhorar o teste de PUT - POST usuarios (adm false), POST login, PUT produtos
-- reaproveitar código - criar index com POST usuarios e POST login
-- DELETE usuarios
-- criando teste de contrato - install @hapi/joi
-- executando o teste em ambientes diferentes
-    - install cross-env 
-    - criar diretório config
-    - ajustar global.js
-- padronizando o código - install standard
-
-mais:
-- sobrescrever o .mocharc no terminal
-
-## Material complementar
-
-- [Repositório sample-supertest](https://github.com/PauloGoncalvesBH/sample-supertest)
-- inserir destruct js
-- eslint
-- chai
-- mochajs
+Libs:
+1. mocha (runner, estrutura)
+1. mochawesome (report)
+1. chai (assert)
+1. supertest (request)
+1. faker
+1. joi (schema json)
+1. cross-env (var)
+1. standard (lint)
 
 ---
 
-[Licença MIT](https://github.com/Bora-QA/Sobre/blob/master/LICENSE)
+Aulas:
+
+1. Introdução
+    - Qual o objetivo desse curso
+    - curso para todos os níveis, desde que cumpram com os pré-requisitos de básico de JS e saiba testar webAPI REST manualmente
+
+1. Conhecendo algumas ferramentas que iremos utilizar
+    - npm install mocha, chai, supertest, faker, joi - oq é cada?
+    - serverest
+
+1. Iniciando o projeto e organizando a estrutura dos testes
+    - npm init - iniciar projeto
+    - configurar .mocharc.js
+    - inserir execução dos testes no script 'npm t'
+
+1. Fazendo GET
+    - primeiro teste 
+        - explicar `describe` e `it`
+        - get em usuarios
+    - GET com query string
+    - usar chai para validar o retorno
+
+1. Fazendo POST
+    - fazer POST usuarios
+    - cenarios: cadastro com sucesso E bad request
+    - refatorar GET /usuarios para cadastrar usuario no inicio
+
+1. DESAFIO 1
+    - Em POST de /usuarios, criar automação que valide que o e-mail já está sendo utilizado.
+
+1. Usando dados aleatórios
+    - faker - usar dados aleatórios em POST usuario
+
+1. Fazendo um pouco mais de POST enviando header
+    - POST login e enviar auth no header de POST produtos
+
+1. Configurando report HTML
+    - report HTML - instalar mochawesome
+    - lembrar para inserir report/ no .gitignore
+
+1. Organizando o código antes de aprendermos mais
+    - estruturar os testes dentro de test/{usuarios, produtos}
+    - criar o global.js para centralizar o supertest
+
+1. Fazendo DELETE
+    - DELETE usuarios
+
+1. Reaproveitando código
+    - criar index com POST usuarios
+    - refatorar DELETE /usuarios - colocar p criar usuario antes de cada teste
+    - refatorar GET /usuarios - colocar p criar usuario antes de cada teste
+
+1. DESAFIO 2
+    - Reescrever POST de /produtos, reaproveitando /login e POST /usuarios em `index`
+
+1. Fazendo PUT
+    - atualizar dados - PUT produtos
+        - ordem das requests > post login, post produtos, put produto
+    - inserir /login no beforeEach
+
+1. DESAFIO 3
+    - Reescrever o PUT de /produtos para que fique enxuto, levando alguns códigos para `index`
+
+1. Testando schema json com Joi
+    - criando teste de contrato - install joi
+
+1. Executar os testes em ambientes diferentes
+    - install cross-env 
+    - criar diretório config
+    - ajustar global.js
+
+1. Padronizar o código
+    - install standard
+
+1. Sobrescrever configuração do Mocha no terminal
+
+1. Encerramento do curso
+
+## Material complementar
+
+- [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [ServeRest](https://github.com/PauloGoncalvesBH/ServeRest)
+- [Exemplo de automação com SuperTest](https://github.com/PauloGoncalvesBH/sample-supertest)
+- **Mocha**
+    - [Site](https://mochajs.org/)
+    - [NPM](https://www.npmjs.com/package/mocha)
+- [Mochawesome](https://www.npmjs.com/package/mochawesome)
+- **Chai**
+    - [Site](https://www.chaijs.com/)
+    - [NPM](https://www.npmjs.com/package/chai)
+- [SuperTest](https://www.npmjs.com/package/supertest)
+- **Faker**
+    - [Site](http://marak.github.io/faker.js/)
+    - [NPM](https://www.npmjs.com/package/faker)
+- **Joi**
+    - [Site](https://joi.dev/api/)
+    - [NPM](https://www.npmjs.com/package/joi)
+- [Cross-env](https://www.npmjs.com/package/cross-env)
+- [Standard](https://www.npmjs.com/package/standard)
+
+---
+
+[Licença](https://github.com/Bora-QA/Sobre/blob/master/LICENSE)

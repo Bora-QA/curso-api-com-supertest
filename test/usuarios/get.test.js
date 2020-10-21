@@ -1,28 +1,20 @@
 const chai = require('chai')
 
 const rotaUsuarios = '/usuarios'
-const utils = require('../utils')
 
-describe(rotaUsuarios + ' GET', () => {
+describe('Validar verbo GET na rota ' + rotaUsuarios, () => {
   it('Query string - Busca por todos as chaves', async () => {
-    const usuario = await utils.cadastrarUsuario()
-    const { body } = await request.get(rotaUsuarios).query({
-      nome: usuario.nome,
-      email: usuario.email,
-      password: usuario.password,
-      administrador: usuario.administrador,
-      _id: usuario._id
-    }).expect(200)
+    const { body } = await request.get(rotaUsuarios).query({ _id: '0uxuPY0cbmQhpEz1' }).expect(200)
 
     chai.assert.deepEqual(body, {
       quantidade: 1,
       usuarios: [
         {
-          nome: usuario.nome,
-          email: usuario.email,
-          password: usuario.password,
-          administrador: usuario.administrador,
-          _id: usuario._id
+          nome: 'Fulano da Silva',
+          email: 'fulano@qa.com',
+          password: 'teste',
+          administrador: 'true',
+          _id: '0uxuPY0cbmQhpEz1'
         }
       ]
     })
@@ -37,13 +29,7 @@ describe(rotaUsuarios + ' GET', () => {
     const { body } = await request.get(rotaUsuarios).query({ inexistente: 'a' }).expect(400)
 
     chai.assert.deepEqual(body, {
-      error: {
-        name: 'ValidationError',
-        message: 'Validation Failed',
-        statusCode: 400,
-        error: 'Bad Request',
-        details: [{ inexistente: '"inexistente" is not allowed' }]
-      }
+      inexistente: 'inexistente não é permitido'
     })
   })
 })

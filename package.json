@@ -11,13 +11,13 @@
     "lint:fix": "standard --fix"
   },
   "devDependencies": {
-    "@hapi/joi": "^17.1.1",
     "chai": "^4.2.0",
     "cross-env": "^7.0.2",
     "faker": "^4.1.0",
+    "joi": "^17.2.1",
     "mocha": "^7.2.0",
     "mochawesome": "^6.1.1",
-    "standard": "^14.3.3",
+    "standard": "^14.3.4",
     "supertest": "^4.0.2"
   },
   "standard": {
