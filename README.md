@@ -72,10 +72,10 @@ Aulas:
     - npm init - iniciar projeto
     - configurar .mocharc.js
     - inserir execução dos testes no script 'npm t'
+    - explicar `describe` e `it`
 
 1. Fazendo GET
     - primeiro teste 
-        - explicar `describe` e `it`
         - get em usuarios
     - GET com query string
     - usar chai para validar o retorno
