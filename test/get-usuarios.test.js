@@ -7,17 +7,27 @@ const rotaUsuarios = '/usuarios'
 
 describe('Validar verbo GET na rota ' + rotaUsuarios, () => {
   it('Query string - Busca por todos as chaves', async () => {
-    const { body } = await request.get(rotaUsuarios).query({ _id: '0uxuPY0cbmQhpEz1' }).expect(200)
+
+    const usuario = {
+      nome: "bora qa",
+      email: "testador@boraqa.com",
+      password: "1234",
+      administrador: "true"
+    }
+
+    const { body: bodyUsuario } = await request.post(rotaUsuarios).send(usuario).expect(201)
+
+    const { body } = await request.get(rotaUsuarios).query({ _id: bodyUsuario._id }).expect(200)
 
     chai.assert.deepEqual(body, {
       quantidade: 1,
       usuarios: [
         {
-          nome: 'Fulano da Silva',
-          email: 'fulano@qa.com',
-          password: 'teste',
-          administrador: 'true',
-          _id: '0uxuPY0cbmQhpEz1'
+          nome: usuario.nome,
+          email: usuario.email,
+          password: usuario.password,
+          administrador: usuario.administrador,
+          _id: bodyUsuario._id
         }
       ]
     })
