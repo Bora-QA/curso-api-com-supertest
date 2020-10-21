@@ -1,4 +1,4 @@
- 📖 (Curso) Automação de API com SuperTest
+# 📖 (Curso) Automação de API com SuperTest
 
 #### Um curso do [Bora QA](http://boraqa.org) para a comunidade de testes ❤️
 ___
@@ -7,7 +7,7 @@ ___
 
 1. Automatizar os verbos HTTP _GET, POST, PUT_ e _DELETE_ em Javascript com SuperTest.
 1. Gerar report HTML com o resultado.
-1. Realizar teste de contrato.
+1. Validar schema json.
 1. Utilizar dados aleatórios.
 1. Executar o mesmo teste em ambientes diferentes.
 1. Manter um código bem estruturado seguindo o guia de estilo do Javascript.
