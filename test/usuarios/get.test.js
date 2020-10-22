@@ -1,31 +1,24 @@
 const chai = require('chai')
-const faker = require('faker')
+
+const { cadastrarUsuario } = require('../../utils')
 
 const rotaUsuarios = '/usuarios'
 
 describe('Validar verbo GET na rota ' + rotaUsuarios, () => {
   it('Query string - Busca por todos as chaves', async () => {
+    const { nome, email, password, administrador, _id } = await cadastrarUsuario()
 
-    const usuario = {
-      nome: faker.name.firstName() + ' ' + faker.name.lastName(),
-      email: faker.internet.email(),
-      password: faker.internet.password(),
-      administrador: `${faker.random.boolean()}`
-    }
-
-    const { body: bodyUsuario } = await request.post(rotaUsuarios).send(usuario).expect(201)
-
-    const { body } = await request.get(rotaUsuarios).query({ _id: bodyUsuario._id }).expect(200)
+    const { body } = await request.get(rotaUsuarios).query({ _id }).expect(200)
 
     chai.assert.deepEqual(body, {
       quantidade: 1,
       usuarios: [
         {
-          nome: usuario.nome,
-          email: usuario.email,
-          password: usuario.password,
-          administrador: usuario.administrador,
-          _id: bodyUsuario._id
+          nome,
+          email,
+          password,
+          administrador,
+          _id
         }
       ]
     })
