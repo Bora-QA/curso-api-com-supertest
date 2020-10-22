@@ -98,13 +98,13 @@ Aulas:
 1. Fazendo um pouco mais de POST enviando header
     - POST login e enviar auth no header de POST produtos
 
-1. Configurando report HTML
-    - report HTML - instalar mochawesome
-    - lembrar para inserir report/ no .gitignore
-
 1. Organizando o código antes de aprendermos mais
     - estruturar os testes dentro de test/{usuarios, produtos}
     - criar o global.js para centralizar o supertest
+
+1. Configurando report HTML
+    - report HTML - instalar mochawesome
+    - lembrar para inserir report/ no .gitignore
 
 1. Fazendo DELETE
     - DELETE usuarios
