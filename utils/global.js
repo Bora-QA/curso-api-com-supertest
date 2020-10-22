@@ -1,5 +1,5 @@
 const supertest = require('supertest')
 
-const url = 'http://localhost:3000'
+const { url } = require('../config')
 
 global.request = supertest(url)
