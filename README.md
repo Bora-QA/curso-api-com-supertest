@@ -120,7 +120,7 @@ Aulas:
 1. Fazendo PUT
     - atualizar dados - PUT produtos
         - ordem das requests > post login, post produtos, put produto
-    - inserir /login no beforeEach
+    - inserir /cadastro e /login no beforeEach
 
 1. DESAFIO 3
     - Reescrever o PUT de /produtos para que fique enxuto, levando alguns códigos para `index`
