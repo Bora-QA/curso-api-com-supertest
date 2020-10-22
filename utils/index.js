@@ -29,7 +29,34 @@ async function login (email, password) {
   return body
 }
 
+async function cadastrarProduto ({
+  authorization,
+  nome = faker.commerce.productName() + faker.random.number(),
+  preco = faker.random.number(),
+  descricao = faker.random.words(),
+  quantidade = faker.random.number()
+}) {
+  const { body } = await request
+  .post('/produtos')
+  .send({
+    nome,
+    preco,
+    descricao,
+    quantidade
+  })
+  .set('authorization', authorization)
+  .expect(201)
+  return {
+    _id: body._id,
+    nome,
+    preco,
+    descricao,
+    quantidade
+  }
+}
+
 module.exports = {
+  cadastrarProduto,
   cadastrarUsuario,
   login
 }
