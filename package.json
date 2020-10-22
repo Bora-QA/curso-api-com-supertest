@@ -10,6 +10,7 @@
     "chai": "^4.2.0",
     "faker": "^4.1.0",
     "mocha": "^7.2.0",
+    "mochawesome": "^6.1.1",
     "supertest": "^5.0.0"
   }
 }
