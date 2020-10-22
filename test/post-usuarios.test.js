@@ -1,17 +1,18 @@
 const chai = require('chai')
+const faker = require('faker')
 const supertest = require('supertest')
 
-const request = supertest('https://api.serverest.dev')
+const request = supertest('http://localhost:3000')
 
 const rotaUsuarios = '/usuarios'
 
 describe(`Validar verbo POST na rota ${rotaUsuarios}`, () => {
   it('Cadastro com sucesso', async () => {
     const { body } = await request.post(rotaUsuarios).send({
-      nome: "bora qazer",
-      email: "teste@boraqa.com",
-      password: "1234",
-      administrador: "true"
+      nome: faker.name.firstName() + ' ' + faker.name.lastName(),
+      email: faker.internet.email(),
+      password: faker.internet.password(),
+      administrador: `${faker.random.boolean()}`
     }).expect(201)
 
     chai.assert.deepEqual(body, { message: 'Cadastro realizado com sucesso', _id: body._id })

@@ -1,7 +1,8 @@
 const chai = require('chai')
+const faker = require('faker')
 const supertest = require('supertest')
 
-const request = supertest('https://api.serverest.dev')
+const request = supertest('http://localhost:3000')
 
 const rotaUsuarios = '/usuarios'
 
@@ -9,10 +10,10 @@ describe('Validar verbo GET na rota ' + rotaUsuarios, () => {
   it('Query string - Busca por todos as chaves', async () => {
 
     const usuario = {
-      nome: "bora qa",
-      email: "testador@boraqa.com",
-      password: "1234",
-      administrador: "true"
+      nome: faker.name.firstName() + ' ' + faker.name.lastName(),
+      email: faker.internet.email(),
+      password: faker.internet.password(),
+      administrador: `${faker.random.boolean()}`
     }
 
     const { body: bodyUsuario } = await request.post(rotaUsuarios).send(usuario).expect(201)
