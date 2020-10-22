@@ -21,6 +21,15 @@ async function cadastrarUsuario ({
   }
 }
 
+async function login (email, password) {
+  const { body } = await request.post('/login').send({
+    email,
+    password
+  }).expect(200)
+  return body
+}
+
 module.exports = {
-  cadastrarUsuario
+  cadastrarUsuario,
+  login
 }
