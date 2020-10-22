@@ -65,20 +65,23 @@ Aulas:
     - curso para todos os níveis, desde que cumpram com os pré-requisitos de básico de JS e saiba testar webAPI REST manualmente
 
 1. Conhecendo algumas ferramentas que iremos utilizar
-    - npm install mocha, chai, supertest, faker, joi - oq é cada?
+    - mocha, mochawesome, chai, supertest, faker, joi, cross-env, standard - oq é cada?
     - serverest
 
 1. Iniciando o projeto e organizando a estrutura dos testes
     - npm init - iniciar projeto
+        - npm install mocha
     - configurar .mocharc.js
     - inserir execução dos testes no script 'npm t'
     - explicar `describe` e `it`
 
 1. Fazendo GET
+    - npm install supertest
     - primeiro teste 
         - get em usuarios
     - GET com query string
     - usar chai para validar o retorno
+        - npm install chai
 
 1. Fazendo POST
     - fazer POST usuarios
@@ -89,7 +92,8 @@ Aulas:
     - Em POST de /usuarios, criar automação que valide que o e-mail já está sendo utilizado.
 
 1. Usando dados aleatórios
-    - faker - usar dados aleatórios em POST usuario
+    - faker - usar dados aleatórios em POST e GET usuarios
+        - npm install faker
 
 1. Fazendo um pouco mais de POST enviando header
     - POST login e enviar auth no header de POST produtos
