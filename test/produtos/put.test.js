@@ -1,7 +1,7 @@
 const chai = require('chai')
 const faker = require('faker')
 
-const { cadastrarUsuario, login } = require('../../utils')
+const { cadastrarProduto, cadastrarUsuario, login } = require('../../utils')
 
 const rotaProdutos = '/produtos'
 
@@ -13,28 +13,20 @@ describe(rotaProdutos + ' PUT', () => {
   })
 
   it('Registro alterado', async () => {
-    const produto = {
-      nome: faker.commerce.productName() + faker.random.number(),
-      preco: faker.random.number(),
-      descricao: faker.random.words(),
-      quantidade: faker.random.number()
-    }
+    const produto = await cadastrarProduto({ authorization: this.authorization })
 
-    const { body: bodyProduto } = await request
-      .post(rotaProdutos)
-      .send(produto)
-      .set('authorization', this.authorization)
-      .expect(201)
-
-    produto.nome = 'Taeste alteração'  + faker.random.number()
-
-    const { body: bodyPut } = await request
-      .put(`${rotaProdutos}/${bodyProduto._id}`)
-      .send(produto)
+    const { body } = await request
+      .put(`${rotaProdutos}/${produto._id}`)
+      .send({
+        nome: faker.commerce.productName() + faker.random.number(),
+        preco: produto.preco,
+        descricao: produto.descricao,
+        quantidade: produto.quantidade
+      })
       .set('authorization', this.authorization)
       .expect(200)
 
-    chai.assert.deepEqual(bodyPut, { message: 'Registro alterado com sucesso' })
+    chai.assert.deepEqual(body, { message: 'Registro alterado com sucesso' })
   })
 
   it('Cadastro com sucesso', async () => {
