@@ -1,8 +1,5 @@
 const chai = require('chai')
 const faker = require('faker')
-const supertest = require('supertest')
-
-const request = supertest('http://localhost:3000')
 
 const rotaUsuarios = '/usuarios'
 
