@@ -4,10 +4,12 @@
   "private": true,
   "description": "Curso - Automação de API com SuperTest",
   "scripts": {
-    "test": "mocha"
+    "test": "cross-env AMBIENTE='local' mocha",
+    "test:hom": "cross-env AMBIENTE='homologacao' mocha"
   },
   "dependencies": {
     "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
     "faker": "^4.1.0",
     "joi": "^17.2.1",
     "mocha": "^7.2.0",
