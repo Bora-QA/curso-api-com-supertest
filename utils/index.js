@@ -37,15 +37,15 @@ async function cadastrarProduto ({
   quantidade = faker.random.number()
 }) {
   const { body } = await request
-  .post('/produtos')
-  .send({
-    nome,
-    preco,
-    descricao,
-    quantidade
-  })
-  .set('authorization', authorization)
-  .expect(201)
+    .post('/produtos')
+    .send({
+      nome,
+      preco,
+      descricao,
+      quantidade
+    })
+    .set('authorization', authorization)
+    .expect(201)
   return {
     _id: body._id,
     nome,

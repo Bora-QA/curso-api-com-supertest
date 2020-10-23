@@ -19,7 +19,6 @@ describe(rotaUsuarios + ' CONTRATO', () => {
 
     joi.assert(body, post)
   })
-  
 
   it('PUT', async () => {
     const { body } = await request
