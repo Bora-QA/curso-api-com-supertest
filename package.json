@@ -5,7 +5,9 @@
   "description": "Curso - Automação de API com SuperTest",
   "scripts": {
     "test": "cross-env AMBIENTE='local' mocha",
-    "test:hom": "cross-env AMBIENTE='homologacao' mocha"
+    "test:hom": "cross-env AMBIENTE='homologacao' mocha",
+    "lint": "standard",
+    "lint:fix": "standard --fix"
   },
   "dependencies": {
     "chai": "^4.2.0",
@@ -14,6 +16,15 @@
     "joi": "^17.2.1",
     "mocha": "^7.2.0",
     "mochawesome": "^6.1.1",
+    "standard": "^15.0.0",
     "supertest": "^5.0.0"
+  },
+  "standard": {
+    "globals": [
+      "beforeEach",
+      "describe",
+      "it",
+      "request"
+    ]
   }
 }
