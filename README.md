@@ -64,10 +64,6 @@ Aulas:
     - Qual o objetivo desse curso
     - curso para todos os níveis, desde que cumpram com os pré-requisitos de básico de JS e saiba testar webAPI REST manualmente
 
-1. Conhecendo algumas ferramentas que iremos utilizar
-    - mocha, mochawesome, chai, supertest, faker, joi, cross-env, standard - oq é cada?
-    - serverest
-
 1. Iniciando o projeto e organizando a estrutura dos testes
     - npm init - iniciar projeto
         - npm install mocha
@@ -77,6 +73,7 @@ Aulas:
 
 1. Fazendo GET
     - npm install supertest
+    - explicar serverest
     - primeiro teste 
         - get em usuarios
     - GET com query string
