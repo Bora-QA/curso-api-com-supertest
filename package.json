@@ -1,23 +1,21 @@
 {
   "name": "curso-supertest-bora-qa",
-  "version": "1.0.0",
   "private": true,
-  "description": "Curso - Automação de API com SuperTest",
+  "author": "Paulo Gonçalves (https://github.com/PauloGoncalvesBH)",
+  "description": "Bora QA - Automação de API com SuperTest",
   "scripts": {
-    "test": "cross-env AMBIENTE='local' mocha",
-    "test:hom": "cross-env AMBIENTE='homologacao' mocha",
+    "test": "NODE_ENV=dev mocha",
+    "test:prod": "NODE_ENV=prod mocha",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
   "dependencies": {
-    "chai": "^4.2.0",
-    "cross-env": "^7.0.2",
-    "faker": "^4.1.0",
-    "joi": "^17.2.1",
-    "mocha": "^7.2.0",
-    "mochawesome": "^6.1.1",
-    "standard": "^15.0.0",
-    "supertest": "^5.0.0"
+    "chai": "4.3.4",
+    "faker": "5.5.3",
+    "mocha": "9.0.3",
+    "mochawesome": "6.2.2",
+    "standard": "16.0.3",
+    "supertest": "6.1.5"
   },
   "standard": {
     "globals": [

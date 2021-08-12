@@ -7,10 +7,13 @@ ___
 
 1. Automatizar os verbos HTTP _GET, POST, PUT_ e _DELETE_ em Javascript com SuperTest.
 1. Gerar report HTML com o resultado.
-1. Validar schema json.
-1. Utilizar dados aleatórios.
+1. Utilizar dados fakes.
 1. Executar o mesmo teste em ambientes diferentes.
-1. Manter um código bem estruturado seguindo o guia de estilo do Javascript.
+1. Manter um código bem estruturado.
+
+## Tirando dúvidas
+
+As dúvidas devem ser tiradas na [aba de issues](https://github.com/Bora-QA/curso-api-com-supertest) do repositório. 
 
 ## O que preciso saber antes de iniciar?
 
@@ -33,10 +36,10 @@ ___
 - [Texto (inglês) | Creating a package.json file](https://docs.npmjs.com/creating-a-package-json-file)
 
 #### Teste em API Rest
-- [Texto | Automatizando testes de sua API com Postman](https://medium.com/assertqualityassurance/automatizando-sua-api-com-postman-64a72185e1e6)
+- [Playlist | Testes de API Rest | Júlio de Lima](https://www.youtube.com/watch?v=VA7uEDtMdBM&list=PLf8x7B3nFTl1hYsgnXaZnXa4V5DHDd4fa)
+- [Texto | Automatizando testes de sua API com Postman | Danilo José](https://medium.com/assertqualityassurance/automatizando-sua-api-com-postman-64a72185e1e6)
 - [Vídeo | API // Dicionário do programador](https://www.youtube.com/watch?v=vGuqKIRWosk)
 - [Vídeo | O QUE É UMA API? (Na prática, não na teoria)](https://www.youtube.com/watch?v=3LHSyha0xN0)
-- [Playlist | Testes de API Rest](https://www.youtube.com/watch?v=VA7uEDtMdBM&list=PLf8x7B3nFTl1hYsgnXaZnXa4V5DHDd4fa)
 
 ## O que preciso ter na máquina?
 
@@ -44,21 +47,26 @@ ___
 - [Node](https://nodejs.org/en/download/)
   - Para verificar se a instalação foi feita com sucesso, execute `npm -v` e `node -v` no terminal. Se ambos os comandos retornarem número de versão, então está tudo certo.
 
+
+## Ferramentas que serão utilizadas
+
+1. **Mocha** (runner, estrutura)
+    - [Site](https://mochajs.org/)
+    - [NPM](https://www.npmjs.com/package/mocha)
+1. [Mochawesome](https://www.npmjs.com/package/mochawesome) (mochawesome)
+1. **Chai** (asserção)
+    - [Site](https://www.chaijs.com/)
+    - [NPM](https://www.npmjs.com/package/chai)
+1. [SuperTest](https://www.npmjs.com/package/supertest) (request)
+1. **Faker** (dados fakes)
+    - [Site](http://marak.github.io/faker.js/)
+    - [NPM](https://www.npmjs.com/package/faker)
+1. [Standard](https://www.npmjs.com/package/standard) (lint)
+1. [ServeRest](https://github.com/ServeRest/ServeRest) (API a ser testada)
+
 ## Grade
 
-Libs:
-1. mocha (runner, estrutura)
-1. mochawesome (report)
-1. chai (assert)
-1. supertest (request)
-1. faker
-1. joi (schema json)
-1. cross-env (var)
-1. standard (lint)
-
----
-
-Aulas:
+<details><summary><b>Expanda para ver a grade</b></summary>
 
 1. Introdução
     - Qual o objetivo desse curso
@@ -122,11 +130,7 @@ Aulas:
 1. DESAFIO 3
     - Reescrever o PUT de /produtos para que fique enxuto, levando alguns códigos para `index`
 
-1. Testando schema json com Joi
-    - criando teste de contrato - install joi
-
 1. Executar os testes em ambientes diferentes
-    - install cross-env 
     - criar diretório config
     - ajustar global.js
 
@@ -137,28 +141,13 @@ Aulas:
 
 1. Encerramento do curso
 
+</details>
+
 ## Material complementar
 
 - [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-- [ServeRest](https://github.com/PauloGoncalvesBH/ServeRest)
 - [Exemplo de automação com SuperTest](https://github.com/PauloGoncalvesBH/sample-supertest)
-- **Mocha**
-    - [Site](https://mochajs.org/)
-    - [NPM](https://www.npmjs.com/package/mocha)
-- [Mochawesome](https://www.npmjs.com/package/mochawesome)
-- **Chai**
-    - [Site](https://www.chaijs.com/)
-    - [NPM](https://www.npmjs.com/package/chai)
-- [SuperTest](https://www.npmjs.com/package/supertest)
-- **Faker**
-    - [Site](http://marak.github.io/faker.js/)
-    - [NPM](https://www.npmjs.com/package/faker)
-- **Joi**
-    - [Site](https://joi.dev/api/)
-    - [NPM](https://www.npmjs.com/package/joi)
-- [Cross-env](https://www.npmjs.com/package/cross-env)
-- [Standard](https://www.npmjs.com/package/standard)
 
----
+## Liceça
 
-[Licença](https://github.com/Bora-QA/Sobre/blob/master/LICENSE)
+A licença do material está em [Bora-QA/Licença](https://github.com/Bora-QA/Sobre/blob/main/LICENSE).

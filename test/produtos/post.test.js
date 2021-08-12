@@ -3,18 +3,16 @@ const faker = require('faker')
 
 const { cadastrarUsuario, login } = require('../../utils')
 
-const rotaProdutos = '/produtos'
-
-describe(rotaProdutos + ' POST', () => {
+describe('POST /produtos', () => {
   it('Cadastro com sucesso', async () => {
     const { email, password } = await cadastrarUsuario({ administrador: 'true' })
     const { authorization } = await login(email, password)
 
-    const { body } = await request.post(rotaProdutos).send({
-      nome: faker.commerce.productName() + faker.random.number(),
-      preco: faker.random.number(),
+    const { body } = await request.post('/produtos').send({
+      nome: faker.commerce.productName() + faker.datatype.number(),
+      preco: faker.datatype.number(),
       descricao: faker.random.words(),
-      quantidade: faker.random.number()
+      quantidade: faker.datatype.number()
     }).set('authorization', authorization).expect(201)
 
     chai.assert.deepEqual(body, { message: 'Cadastro realizado com sucesso', _id: body._id })

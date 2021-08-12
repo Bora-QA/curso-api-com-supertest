@@ -5,20 +5,20 @@ const { cadastrarProduto, cadastrarUsuario, login } = require('../../utils')
 
 const rotaProdutos = '/produtos'
 
-describe(rotaProdutos + ' PUT', () => {
+describe('PUT /produtos', () => {
   beforeEach(async () => {
     const { email, password } = await cadastrarUsuario({ administrador: 'true' })
     const { authorization } = await login(email, password)
     this.authorization = authorization
   })
 
-  it('Registro alterado', async () => {
+  it('Alterar todos os dados de produto com sucesso', async () => {
     const produto = await cadastrarProduto({ authorization: this.authorization })
 
     const { body } = await request
       .put(`${rotaProdutos}/${produto._id}`)
       .send({
-        nome: faker.commerce.productName() + faker.random.number(),
+        nome: faker.commerce.productName() + faker.datatype.number(),
         preco: produto.preco,
         descricao: produto.descricao,
         quantidade: produto.quantidade
@@ -31,10 +31,10 @@ describe(rotaProdutos + ' PUT', () => {
 
   it('Cadastro com sucesso', async () => {
     const { body } = await request.put(rotaProdutos + '/a').send({
-      nome: faker.commerce.productName() + faker.random.number(),
-      preco: faker.random.number(),
+      nome: faker.commerce.productName() + faker.datatype.number(),
+      preco: faker.datatype.number(),
       descricao: faker.random.words(),
-      quantidade: faker.random.number()
+      quantidade: faker.datatype.number()
     }).set('authorization', this.authorization)
       .expect(201)
 

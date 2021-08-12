@@ -4,7 +4,7 @@ const { cadastrarUsuario } = require('../../utils')
 
 const rotaUsuarios = '/usuarios'
 
-describe(rotaUsuarios + ' DELETE', () => {
+describe('DELETE /usuarios', () => {
   it('Registro excluído com sucesso', async () => {
     const { _id: idUsuarioCadastrado } = await cadastrarUsuario()
 

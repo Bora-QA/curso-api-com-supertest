@@ -9,13 +9,13 @@ describe(`Validar verbo POST na rota ${rotaUsuarios}`, () => {
       nome: faker.name.firstName() + ' ' + faker.name.lastName(),
       email: faker.internet.email(),
       password: faker.internet.password(),
-      administrador: `${faker.random.boolean()}`
+      administrador: `${faker.datatype.boolean()}`
     }).expect(201)
 
     chai.assert.deepEqual(body, { message: 'Cadastro realizado com sucesso', _id: body._id })
   })
 
-  it('Bad request - Campos de preenchimento obrigatório', async () => {
+  it('Deve retornar erro ao enviar POST sem as propriedades obrigatórias', async () => {
     const { body } = await request.post(rotaUsuarios).send({ inexistente: '1' }).expect(400)
 
     chai.assert.deepEqual(body, {

@@ -4,7 +4,7 @@ async function cadastrarUsuario ({
   nome = faker.name.firstName() + ' ' + faker.name.lastName(),
   email = faker.internet.email(),
   password = faker.internet.password(),
-  administrador = `${faker.random.boolean()}`
+  administrador = `${faker.datatype.boolean()}`
 } = {}) {
   const { body } = await request.post('/usuarios').send({
     nome,
@@ -31,10 +31,10 @@ async function login (email, password) {
 
 async function cadastrarProduto ({
   authorization,
-  nome = faker.commerce.productName() + faker.random.number(),
-  preco = faker.random.number(),
+  nome = faker.commerce.productName() + faker.datatype.number(),
+  preco = faker.datatype.number(),
   descricao = faker.random.words(),
-  quantidade = faker.random.number()
+  quantidade = faker.datatype.number()
 }) {
   const { body } = await request
     .post('/produtos')
